@@ -1,25 +1,21 @@
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import React, { Component } from "react";
+import logo from "./logo.svg";
 import "./App.css";
-import EmployeeSearch from "./pages/EmployeeSearch"
 
-function App() {
-  return (
-    <Router>
-        <div>
-            
-            <div class="jumbotron">
-            <h1 class="text-center">Employee Directory</h1>
-            <h6 class="text-center">Please use the search form to narrow results</h6>
-            </div>
-            <br></br>
-            <EmployeeSearch />
-            <br></br>
-            
-            
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <div className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h2>Welcome to React</h2>
         </div>
-    </Router>
-  );
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
+      </div>
+    );
+  }
 }
 
 export default App;
