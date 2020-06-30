@@ -13,7 +13,7 @@ class EmployeeSearch extends Component {
   handleInputChange = (event) => {
     const filter = event.target.value;
     
-    const filteredList = this.state.results.filter((employee) => {
+    const filteredList = this.state.employeeList.filter((employee) => {
       const combinedNames = employee.name.first.toLowerCase() + " " + employee.name.last.toLowerCase();
       if (combinedNames.indexOf(filter.toLowerCase()) !== -1) {
         return employee;
@@ -24,7 +24,7 @@ class EmployeeSearch extends Component {
 
   componentDidMount() {
     API.getEmployeeList()
-      .then((res) => {this.setState({ results: res.data.results })
+      .then((res) => {this.setState({ results: res.data.results, employeeList: res.data.results })
       
     })
       .catch((err) => {
